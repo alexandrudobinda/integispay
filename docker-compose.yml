@@ -1,0 +1,10 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: integispay:local
+    container_name: integispay
+    ports:
+      - "3100:3000"
+    restart: unless-stopped

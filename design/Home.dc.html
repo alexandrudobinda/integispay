@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>IntegisPay — Compliant crypto + fiat payment integration, done for you</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #EAEEF4; }
+  @keyframes ip-drift { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-3%,4%) scale(1.08); } }
+  @keyframes ip-drift2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(4%,-3%) scale(1.1); } }
+  @keyframes ip-line { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes ip-blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+</style>
+</helmet>
+
+<div style="background:#EAEEF4;color:#182636;font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <dc-import name="Header" active="home" hint-size="100%,68px"></dc-import>
+
+  <!-- HERO -->
+  <section style="position:relative;padding:84px 24px 72px;overflow:hidden;">
+    <div style="position:absolute;top:-120px;left:50%;width:760px;height:560px;transform:translateX(-50%);background:radial-gradient(closest-side, rgba(18,179,154,0.16), rgba(18,179,154,0) 70%);filter:blur(8px);animation:ip-drift 16s ease-in-out infinite;pointer-events:none;"></div>
+    <div style="position:absolute;top:40px;right:-140px;width:540px;height:480px;background:radial-gradient(closest-side, rgba(18,179,154,0.15), rgba(18,179,154,0) 70%);filter:blur(8px);animation:ip-drift2 19s ease-in-out infinite;pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(13,27,46,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(13,27,46,0.05) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(circle at 50% 30%, black 10%, transparent 75%);-webkit-mask-image:radial-gradient(circle at 50% 30%, black 10%, transparent 75%);pointer-events:none;"></div>
+    <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:56px;align-items:center;">
+      <div style="max-width:620px;">
+        <div style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(18,179,154,0.28);background:rgba(18,179,154,0.06);border-radius:100px;padding:7px 14px;margin-bottom:26px;">
+          <span style="width:7px;height:7px;border-radius:50%;background:#12B39A;box-shadow:0 0 10px #12B39A;"></span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#0E9A84;">Built on a MiCA-compliant, EU-regulated processor</span>
+        </div>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(38px,5.6vw,66px);line-height:1.04;letter-spacing:-0.03em;color:#0E1A2B;margin:0 0 22px;">Accept crypto + fiat <span style="color:#12B39A;">the compliant way</span> — integrated for you.</h1>
+        <p style="font-size:18.5px;line-height:1.6;color:#586780;margin:0 0 34px;max-width:545px;">We're a specialist payments-integration studio. We connect crypto-native and Web3 businesses to a regulated payment stack — crypto and fiat, multi-chain, with stablecoin settlement — so you go live in days, not months. Your team doesn't build it. Ours does.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px;">
+          <a href="Contact.dc.html#book" style="background:#12B39A;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:16px;padding:15px 28px;border-radius:11px;box-shadow:0 6px 26px rgba(18,179,154,0.3);transition:transform .15s;" style-hover="transform:translateY(-2px);">Book a free integration call</a>
+          <a href="CryptoIntegrations.dc.html" style="background:rgba(13,27,46,0.05);color:#182636;text-decoration:none;font-weight:500;font-size:16px;padding:15px 26px;border-radius:11px;border:1px solid rgba(13,27,46,0.16);" style-hover="border-color:rgba(18,179,154,0.5);">How the integration works</a>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;"><span style="font-size:13.5px;color:#7E8BA0;">Trusted approach for:</span><span style="font-size:13.5px;color:#586780;">Exchanges · NFT/GameFi · dApps · Crypto SaaS · Marketplaces</span></div>
+      </div>
+      <div style="position:relative;border:1px solid rgba(13,27,46,0.11);border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#F4F7FB);box-shadow:0 30px 80px rgba(13,27,46,0.13);overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:1px solid rgba(13,27,46,0.09);background:rgba(13,27,46,0.03);">
+          <span style="width:11px;height:11px;border-radius:50%;background:#34394a;"></span><span style="width:11px;height:11px;border-radius:50%;background:#34394a;"></span><span style="width:11px;height:11px;border-radius:50%;background:#34394a;"></span>
+          <span style="margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7E8BA0;">POST · create-payment.ts</span>
+          <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#12B39A;border:1px solid rgba(18,179,154,0.3);border-radius:5px;padding:2px 7px;">200 OK</span>
+        </div>
+        <pre style="margin:0;padding:22px 20px;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.85;color:#36435A;overflow-x:auto;"><span style="display:block;"><span style="color:#12B39A;">const</span> payment = <span style="color:#12B39A;">await</span> client.payments.<span style="color:#12B39A;">create</span>({</span><span style="display:block;">  amount:      <span style="color:#B07A12;">149.00</span>,</span><span style="display:block;">  settlement:  <span style="color:#0E8C5E;">"EURXM"</span>,   <span style="color:#93A0B4;">// 1:1 fiat-backed</span></span><span style="display:block;">  accepts:     [<span style="color:#0E8C5E;">"BTC"</span>, <span style="color:#0E8C5E;">"ETH"</span>, <span style="color:#0E8C5E;">"SOL"</span>, <span style="color:#0E8C5E;">"SUI"</span>],</span><span style="display:block;">  recurring:   <span style="color:#12B39A;">true</span>,</span><span style="display:block;">  webhook:     <span style="color:#0E8C5E;">"https://app.acme.xyz/hooks"</span></span><span style="display:block;">});</span><span style="display:block;color:#93A0B4;">// → hosted checkout + multi-chain settlement</span><span style="display:block;"><span style="color:#12B39A;">checkout</span>.url <span style="animation:ip-blink 1.1s steps(1) infinite;color:#12B39A;">▍</span></span></pre>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;padding:14px 18px;border-top:1px solid rgba(13,27,46,0.09);">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E9A84;background:rgba(18,179,154,0.08);border:1px solid rgba(18,179,154,0.2);border-radius:6px;padding:4px 9px;">webhooks</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E9A84;background:rgba(18,179,154,0.08);border:1px solid rgba(18,179,154,0.25);border-radius:6px;padding:4px 9px;">multi-chain</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#586780;background:rgba(13,27,46,0.05);border:1px solid rgba(13,27,46,0.12);border-radius:6px;padding:4px 9px;">recurring</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#586780;background:rgba(13,27,46,0.05);border:1px solid rgba(13,27,46,0.12);border-radius:6px;padding:4px 9px;">payment links</span>
+        </div>
+        <span style="position:absolute;bottom:8px;right:12px;font-size:10px;color:#AEB8C7;font-family:'IBM Plex Mono',monospace;">illustrative</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section data-reveal style="padding:8px 24px 24px;">
+    <div style="max-width:1200px;margin:0 auto;border-top:1px solid rgba(13,27,46,0.08);border-bottom:1px solid rgba(13,27,46,0.08);padding:22px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 28px;">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:#36435A;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 5v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V5l-8-3Z" stroke="#12B39A" stroke-width="1.6" stroke-linejoin="round"></path><path d="M9 12l2 2 4-4" stroke="#12B39A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>MiCA-compliant</span>
+      <span style="width:1px;height:18px;background:rgba(13,27,46,0.12);"></span>
+      <span style="display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:#36435A;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#12B39A" stroke-width="1.6"></circle><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" stroke="#12B39A" stroke-width="1.2"></path></svg>EU-regulated processor</span>
+      <span style="width:1px;height:18px;background:rgba(13,27,46,0.12);"></span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#586780;">BTC · ETH · SOL · SUI · EGLD</span>
+      <span style="width:1px;height:18px;background:rgba(13,27,46,0.12);"></span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#586780;">EURXM · USDXM · RONXM</span>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section data-reveal style="padding:80px 24px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="max-width:680px;margin-bottom:48px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#12B39A;">The problem</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-0.025em;color:#0E1A2B;margin:14px 0 0;">Accepting crypto compliantly got harder. Building it in-house got slower.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:28px;"><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#0E1A2B;margin-bottom:10px;">Regulatory complexity</div><p style="margin:0;font-size:14.5px;line-height:1.6;color:#586780;">Post-MiCA, accepting crypto in the EU means licensed processing, KYC/KYB, travel-rule data and stablecoin rules. Getting it wrong is existential.</p></div>
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:28px;"><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#0E1A2B;margin-bottom:10px;">Fragmented tooling</div><p style="margin:0;font-size:14.5px;line-height:1.6;color:#586780;">Chains, wallets, on/off-ramps, settlement and reconciliation rarely speak the same language. Stitching them together is a project on its own.</p></div>
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:28px;"><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#0E1A2B;margin-bottom:10px;">No time to build it</div><p style="margin:0;font-size:14.5px;line-height:1.6;color:#586780;">Your engineers should ship your product — not spend a quarter on payment plumbing, webhook retries and edge-case settlement logic.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section data-reveal style="padding:24px 24px 80px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="max-width:680px;margin-bottom:44px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#12B39A;">What we do</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-0.025em;color:#0E1A2B;margin:14px 0 0;">A done-for-you payment integration, end to end.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;">
+        <div style="background:linear-gradient(180deg,#FFFFFF,#F4F7FB);border:1px solid rgba(13,27,46,0.1);border-radius:16px;padding:30px;">
+          <div style="width:46px;height:46px;border-radius:12px;background:rgba(18,179,154,0.1);border:1px solid rgba(18,179,154,0.25);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 5v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V5l-8-3Z" stroke="#12B39A" stroke-width="1.6" stroke-linejoin="round"></path><path d="M9 12l2 2 4-4" stroke="#12B39A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;color:#0E1A2B;margin:0 0 10px;">1 · Compliance qualification</h3>
+          <p style="margin:0 0 16px;font-size:14.5px;line-height:1.65;color:#586780;">We assess your model against the regulated processor's requirements — jurisdiction, business type, KYC/KYB and settlement currency — so you know you qualify before a line of code.</p>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;"><li style="font-size:13.5px;color:#36435A;display:flex;gap:9px;"><span style="color:#12B39A;">→</span>Eligibility &amp; jurisdiction review</li><li style="font-size:13.5px;color:#36435A;display:flex;gap:9px;"><span style="color:#12B39A;">→</span>KYC / KYB onboarding support</li><li style="font-size:13.5px;color:#36435A;display:flex;gap:9px;"><span style="color:#12B39A;">→</span>Settlement &amp; payout planning</li></ul>
+        </div>
+        <div style="background:linear-gradient(180deg,#FFFFFF,#F4F7FB);border:1px solid rgba(18,179,154,0.18);border-radius:16px;padding:30px;position:relative;box-shadow:0 24px 60px rgba(13,27,46,0.1);">
+          <span style="position:absolute;top:18px;right:18px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.06em;color:#FFFFFF;background:#12B39A;border-radius:5px;padding:3px 8px;font-weight:600;">CORE</span>
+          <div style="width:46px;height:46px;border-radius:12px;background:rgba(18,179,154,0.12);border:1px solid rgba(18,179,154,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="m9 7-5 5 5 5M15 7l5 5-5 5" stroke="#12B39A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;color:#0E1A2B;margin:0 0 10px;">2 · Technical integration</h3>
+          <p style="margin:0 0 16px;font-size:14.5px;line-height:1.65;color:#586780;">We build the integration into your product: Crypto API, hosted checkout, payment links, recurring billing and multi-chain webhooks — tested, monitored and handed over clean.</p>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;"><li style="font-size:13.5px;color:#36435A;display:flex;gap:9px;"><span style="color:#12B39A;">→</span>Crypto API &amp; hosted checkout</li><li style="font-size:13.5px;color:#36435A;display:flex;gap:9px;"><span style="color:#12B39A;">→</span>Recurring + payment links</li><li style="font-size:13.5px;color:#36435A;display:flex;gap:9px;"><span style="color:#12B39A;">→</span>Webhooks, retries &amp; reconciliation</li></ul>
+        </div>
+        <div style="background:linear-gradient(180deg,#FFFFFF,#F4F7FB);border:1px solid rgba(13,27,46,0.1);border-radius:16px;padding:30px;">
+          <div style="width:46px;height:46px;border-radius:12px;background:rgba(18,179,154,0.1);border:1px solid rgba(18,179,154,0.25);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5 7-11a7 7 0 0 0-14 0c0 6 7 11 7 11Z" stroke="#12B39A" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="12" cy="10" r="2.4" stroke="#12B39A" stroke-width="1.6"></circle></svg></div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;color:#0E1A2B;margin:0 0 10px;">3 · Ongoing support</h3>
+          <p style="margin:0 0 16px;font-size:14.5px;line-height:1.65;color:#586780;">After go-live we stay on: monitoring, new chains and currencies, upgrades and changes as the processor's API and your product evolve.</p>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;"><li style="font-size:13.5px;color:#36435A;display:flex;gap:9px;"><span style="color:#12B39A;">→</span>Monitoring &amp; alerting</li><li style="font-size:13.5px;color:#36435A;display:flex;gap:9px;"><span style="color:#12B39A;">→</span>New chains &amp; currencies</li><li style="font-size:13.5px;color:#36435A;display:flex;gap:9px;"><span style="color:#12B39A;">→</span>API upgrades &amp; changes</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section data-reveal style="padding:0 24px 80px;">
+    <div style="max-width:1200px;margin:0 auto;border:1px solid rgba(13,27,46,0.09);border-radius:20px;background:#F2F5F9;padding:52px 40px;">
+      <div style="max-width:680px;margin-bottom:42px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#12B39A;">How it works</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.6vw,38px);line-height:1.1;letter-spacing:-0.025em;color:#0E1A2B;margin:14px 0 0;">Four steps from kickoff to scale.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;">
+        <div style="padding:24px 22px;border:1px solid rgba(13,27,46,0.09);border-radius:14px;background:rgba(13,27,46,0.03);"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#12B39A;">01</span><h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:#0E1A2B;margin:10px 0 8px;">Qualify</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#586780;">Free call to map your use case, confirm compliance fit and scope the build.</p></div>
+        <div style="padding:24px 22px;border:1px solid rgba(13,27,46,0.09);border-radius:14px;background:rgba(13,27,46,0.03);"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#12B39A;">02</span><h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:#0E1A2B;margin:10px 0 8px;">Integrate</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#586780;">We build and test the integration into your product, against your stack and flows.</p></div>
+        <div style="padding:24px 22px;border:1px solid rgba(13,27,46,0.09);border-radius:14px;background:rgba(13,27,46,0.03);"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#12B39A;">03</span><h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:#0E1A2B;margin:10px 0 8px;">Go live</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#586780;">Production checkout, payment links and webhooks — monitored, with a clean handover.</p></div>
+        <div style="padding:24px 22px;border:1px solid rgba(18,179,154,0.2);border-radius:14px;background:rgba(18,179,154,0.04);"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#12B39A;">04</span><h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:#0E1A2B;margin:10px 0 8px;">Scale</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#586780;">Add chains, currencies and flows as you grow — with support that scales too.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section data-reveal style="padding:0 24px 80px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="max-width:680px;margin-bottom:40px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#12B39A;">Who it's for</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-0.025em;color:#0E1A2B;margin:14px 0 0;">Built for crypto-native &amp; Web3 commerce.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;">
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:24px;"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#0E1A2B;margin:0 0 8px;">Exchanges &amp; brokers</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#586780;">Fiat on/off-ramp, deposits and withdrawals with compliant settlement.</p></div>
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:24px;"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#0E1A2B;margin:0 0 8px;">NFT &amp; GameFi</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#586780;">Mint, marketplace and in-game purchases in crypto or fiat, multi-chain.</p></div>
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:24px;"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#0E1A2B;margin:0 0 8px;">dApps &amp; protocols</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#586780;">Accept payments from app users without holding the regulatory burden.</p></div>
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:24px;"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#0E1A2B;margin:0 0 8px;">Crypto SaaS</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#586780;">Recurring subscriptions billed in stablecoins or fiat, with retries.</p></div>
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:24px;"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#0E1A2B;margin:0 0 8px;">Web3 marketplaces</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#586780;">Split payments and payouts to vendors across chains and currencies.</p></div>
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:24px;"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#0E1A2B;margin:0 0 8px;">Token commerce</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#586780;">Sell goods, memberships or access for tokens with compliant settlement.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section data-reveal style="padding:0 24px 80px;">
+    <div style="max-width:1200px;margin:0 auto;border:1px solid rgba(18,179,154,0.16);border-radius:20px;background:radial-gradient(130% 150% at 0% 0%, rgba(18,179,154,0.08), rgba(234,238,244,0) 55%),#F2F5F9;padding:44px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:32px;">
+      <div><div style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:600;color:#12B39A;letter-spacing:-0.03em;">5–10</div><div style="font-size:14px;color:#586780;margin-top:4px;">days to live, typical integration</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:600;color:#0E1A2B;letter-spacing:-0.03em;">5+</div><div style="font-size:14px;color:#586780;margin-top:4px;">chains supported (BTC, ETH, SOL, SUI, EGLD)</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:600;color:#0E1A2B;letter-spacing:-0.03em;">3</div><div style="font-size:14px;color:#586780;margin-top:4px;">MiCA-aligned stablecoins (EURXM, USDXM, RONXM)</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:600;color:#0E1A2B;letter-spacing:-0.03em;">100%</div><div style="font-size:14px;color:#586780;margin-top:4px;">done for you — no in-house build required</div></div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY TEASER -->
+  <section data-reveal style="padding:0 24px 80px;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;align-items:stretch;">
+      <div style="background:linear-gradient(180deg,#FFFFFF,#F4F7FB);border:1px solid rgba(13,27,46,0.1);border-radius:18px;padding:36px;display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#12B39A;">Case study</span>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:#0E1A2B;margin:12px 0 12px;line-height:1.2;">NFT marketplace, live in 7 days with multi-chain checkout</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#586780;">A Web3 marketplace needed compliant fiat + crypto checkout across ETH, SOL and SUI with EUR settlement. We scoped, integrated and shipped to production in a single sprint.</p>
+        </div>
+        <div style="display:flex;gap:28px;margin-top:28px;flex-wrap:wrap;"><div><div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:#12B39A;">7 days</div><div style="font-size:13px;color:#7E8BA0;">to production</div></div><div><div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:#0E1A2B;">3 chains</div><div style="font-size:13px;color:#7E8BA0;">at launch</div></div></div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:18px;padding:36px;display:flex;flex-direction:column;justify-content:center;">
+        <p style="font-family:'Space Grotesk',sans-serif;font-size:20px;line-height:1.45;color:#1B2A3F;font-weight:500;margin:0 0 20px;letter-spacing:-0.01em;">"They handled the entire payment integration — compliance, API, webhooks. We focused on the product and went live in a week."</p>
+        <div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#12B39A,#5BD6BE);"></div><div><div style="font-size:14px;color:#182636;font-weight:500;">Founder (placeholder)</div><div style="font-size:13px;color:#7E8BA0;">Web3 marketplace</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="CTASection" hint-size="100%,440px"></dc-import>
+
+  <dc-import name="Footer" hint-size="100%,380px"></dc-import>
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { isMobile: false, open: false, scrolled: false };
+  componentDidMount() {
+    this.mq = window.matchMedia('(max-width: 860px)');
+    this._apply = () => this.setState({ isMobile: this.mq.matches, open: false });
+    this._apply();
+    this.mq.addEventListener('change', this._apply);
+    this.onScroll = () => { const s = window.scrollY > 8; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    requestAnimationFrame(() => {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)'; });
+      const io = new IntersectionObserver((ents) => { ents.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; io.unobserve(e.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      els.forEach(el => io.observe(el));
+    });
+  }
+  componentWillUnmount() { this.mq && this.mq.removeEventListener('change', this._apply); window.removeEventListener('scroll', this.onScroll); }
+  renderVals() {
+    return {
+      isDesktop: !this.state.isMobile,
+      isMobile: this.state.isMobile,
+      showMenu: this.state.isMobile && this.state.open,
+      toggle: () => this.setState(s => ({ open: !s.open })),
+      headerBg: this.state.scrolled ? 'rgba(234,238,244,0.9)' : 'rgba(234,238,244,0.55)',
+    };
+  }
+}
+</script>
+</body>
+</html>
