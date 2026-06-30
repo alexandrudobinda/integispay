@@ -7,4 +7,8 @@ services:
     container_name: integispay
     ports:
       - "3100:3000"
+    environment:
+      - SENDGRID_API_KEY=${SENDGRID_API_KEY:-}
+      - CONTACT_FROM_EMAIL=${CONTACT_FROM_EMAIL:-hello@integispay.com}
+      - CONTACT_TO_EMAIL=${CONTACT_TO_EMAIL:-hello@integispay.com}
     restart: unless-stopped

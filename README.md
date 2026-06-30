@@ -64,10 +64,33 @@ This builds the standalone Next.js output and serves it the same way it runs in 
 3. Framework preset is auto-detected as **Next.js** — no settings to change.
 4. Deploy. Every push to the default branch ships a new production deployment.
 
+## Contact form → SendGrid
+
+The contact form posts to a server route (`app/api/contact/route.ts`) that emails the lead via
+SendGrid (`@sendgrid/mail`). The API key lives only on the server — never in client code.
+
+**Setup**
+
+1. In SendGrid → **Settings → API Keys**, create a key with **Mail Send** permission.
+2. Verify a **Single Sender** (the `From` address) under **Settings → Sender Authentication**.
+3. Copy `.env.example` to `.env.local` and fill in:
+
+   ```
+   SENDGRID_API_KEY=SG.xxxxx
+   CONTACT_FROM_EMAIL=hello@integispay.com   # must be a verified sender
+   CONTACT_TO_EMAIL=hello@integispay.com     # where leads are delivered
+   ```
+
+4. **Local dev:** `npm run dev` (Next loads `.env.local` automatically).
+5. **Docker:** `docker compose --env-file .env.local up --build` (passes the vars into the container).
+6. **Vercel:** add the three variables under **Project → Settings → Environment Variables**, then redeploy.
+
+The form validates name/email/message, shows a sending + error state, and replies are set to the
+submitter's email (`replyTo`). For higher deliverability, switch the sender to **Domain
+Authentication** later.
+
 ## Notes before launch
 
-- The contact form has **no backend** — wire `components/ContactForm.tsx` `onSubmit` to your
-  real endpoint / email service / CRM.
 - Replace placeholder contact details (`hello@integispay.com`), case-study figures and
   testimonials with real content.
 - Re-verify processor facts (MiCA compliance, supported chains, stablecoins, payout currencies)

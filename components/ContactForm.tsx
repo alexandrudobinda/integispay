@@ -53,16 +53,35 @@ const COPY: Record<Edition, Copy> = {
 export function ContactForm({ edition }: { edition: Edition }) {
   const copy = COPY[edition];
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [business, setBusiness] = useState("");
   const [useCase, setUseCase] = useState("");
   const [setup, setSetup] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
+  const [error, setError] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // No backend in the prototype — wire this to your endpoint / CRM / email service.
-    setSubmitted(true);
+    if (status === "sending") return;
+    setStatus("sending");
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ edition, name, email, business, useCase, setup, message }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setStatus("error");
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    }
   };
 
   if (submitted) {
@@ -82,6 +101,8 @@ export function ContactForm({ edition }: { edition: Edition }) {
     );
   }
 
+  const sending = status === "sending";
+
   return (
     <div id="contact-form" className="form-card">
       <h2>Tell us about your project</h2>
@@ -94,9 +115,21 @@ export function ContactForm({ edition }: { edition: Edition }) {
           <input
             id="cf-name"
             type="text"
+            required
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Your name"
+          />
+        </div>
+        <div className="field">
+          <label htmlFor="cf-email">Email</label>
+          <input
+            id="cf-email"
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@company.com"
           />
         </div>
         <div className="field">
@@ -138,14 +171,16 @@ export function ContactForm({ edition }: { edition: Edition }) {
           <label htmlFor="cf-message">Message</label>
           <textarea
             id="cf-message"
+            required
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows={4}
             placeholder={copy.messagePlaceholder}
           />
         </div>
-        <button type="submit" className="form-submit">
-          Send &amp; request a call
+        {status === "error" && <p className="form-error">{error}</p>}
+        <button type="submit" className="form-submit" disabled={sending}>
+          {sending ? "Sending…" : "Send & request a call"}
         </button>
         <p className="form-fineprint">
           By submitting you agree to be contacted about your integration. We don&apos;t share
