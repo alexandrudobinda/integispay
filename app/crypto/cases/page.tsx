@@ -84,10 +84,10 @@ const CASES: CaseStudy[] = [
   },
 ];
 
-export default function CaseStudiesPage() {
+export default function CryptoCasesPage() {
   return (
-    <>
-      <Header active="cases" />
+    <div className="ed-crypto">
+      <Header edition="crypto" active="cases" />
 
       {/* HERO */}
       <section className="page-hero" style={{ padding: "72px 24px 48px" }}>
@@ -115,7 +115,7 @@ export default function CaseStudiesPage() {
               <p>{c.body}</p>
               <div className="case-stats">
                 <div className="case-stat">
-                  <div className="big teal">{c.stat1}</div>
+                  <div className="big accent">{c.stat1}</div>
                   <div className="sub">{c.stat1Label}</div>
                 </div>
                 <div className="case-stat">
@@ -139,8 +139,8 @@ export default function CaseStudiesPage() {
         </div>
       </Reveal>
 
-      <CtaSection />
-      <Footer />
-    </>
+      <CtaSection edition="crypto" />
+      <Footer edition="crypto" />
+    </div>
   );
 }

@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     "A payments-integration studio for crypto-native teams. Book a free integration call to map your use case and scope a go-live plan.",
 };
 
-export default function ContactPage() {
+export default function CryptoAboutPage() {
   return (
-    <>
-      <Header active="about" />
+    <div className="ed-crypto">
+      <Header edition="crypto" active="about" />
 
       {/* ABOUT */}
       <section className="about-section">
@@ -75,11 +75,11 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <ContactForm />
+          <ContactForm edition="crypto" />
         </div>
       </section>
 
-      <Footer />
-    </>
+      <Footer edition="crypto" />
+    </div>
   );
 }

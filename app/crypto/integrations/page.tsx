@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 
 export default function CryptoIntegrationsPage() {
   return (
-    <>
-      <Header active="crypto" />
+    <div className="ed-crypto">
+      <Header edition="crypto" active="crypto" />
 
       {/* PAGE HERO */}
       <section className="page-hero">
@@ -29,10 +29,10 @@ export default function CryptoIntegrationsPage() {
             Production-ready in days.
           </p>
           <div className="btn-row center">
-            <Link href="/contact#book" className="btn btn-primary btn-sm">
+            <Link href="/crypto/about#book" className="btn btn-primary btn-sm">
               Book a free integration call
             </Link>
-            <Link href="/eu-mica" className="btn btn-ghost btn-sm">
+            <Link href="/crypto/mica" className="btn btn-ghost btn-sm">
               How MiCA applies
             </Link>
           </div>
@@ -176,9 +176,9 @@ export default function CryptoIntegrationsPage() {
             <div>
               <h3>Stablecoins &amp; settlement</h3>
               <div className="chip-row">
-                <span className="chip teal">EURXM</span>
-                <span className="chip teal">USDXM</span>
-                <span className="chip teal">RONXM</span>
+                <span className="chip accent">EURXM</span>
+                <span className="chip accent">USDXM</span>
+                <span className="chip accent">RONXM</span>
                 <span className="chip">EUR · USD · RON payouts</span>
               </div>
             </div>
@@ -204,8 +204,8 @@ export default function CryptoIntegrationsPage() {
         </div>
       </Reveal>
 
-      <CtaSection />
-      <Footer />
-    </>
+      <CtaSection edition="crypto" />
+      <Footer edition="crypto" />
+    </div>
   );
 }

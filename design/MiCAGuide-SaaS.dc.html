@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Crypto + Fiat for your SaaS in the EU (MiCA) — IntegisPay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #EAEEF4; }
+</style>
+</helmet>
+
+<div style="background:#EAEEF4;color:#182636;font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <dc-import name="Header" active="mica" edition="saas" hint-size="100%,68px"></dc-import>
+
+  <!-- PAGE HERO -->
+  <section style="padding:72px 24px 40px;border-bottom:1px solid rgba(13,27,46,0.08);">
+    <div style="max-width:820px;margin:0 auto;">
+      <span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#E8623C;margin-bottom:16px;">Guide · EU regulation for SaaS</span>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.6vw,52px);line-height:1.06;letter-spacing:-0.03em;color:#0E1A2B;margin:0 0 18px;">Accepting crypto + fiat for your SaaS, compliantly in the EU.</h1>
+      <p style="font-size:18px;line-height:1.65;color:#586780;margin:0 0 22px;max-width:680px;">A practical, engineer's-eye overview of what MiCA means for a software business that wants to bill in crypto and fiat — subscriptions, stablecoins and all — and the cleanest path to compliant acceptance. Written by the team that does the integration.</p>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:13px;color:#7E8BA0;"><span style="font-family:'IBM Plex Mono',monospace;">Updated June 2026</span><span style="width:4px;height:4px;border-radius:50%;background:#93A0B4;"></span><span>~8 min read</span></div>
+    </div>
+  </section>
+
+  <!-- BODY + TOC -->
+  <section style="padding:48px 24px 72px;">
+    <div style="max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start;">
+
+      <aside style="position:sticky;top:90px;flex:0 0 220px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#93A0B4;margin-bottom:14px;">On this page</div>
+        <nav style="display:flex;flex-direction:column;gap:2px;border-left:1px solid rgba(13,27,46,0.12);">
+          <a href="#what-is-mica" style="text-decoration:none;font-size:13.5px;color:#586780;padding:7px 0 7px 16px;margin-left:-1px;border-left:2px solid transparent;" style-hover="color:#E8623C;border-left-color:#E8623C;">1 · What MiCA is</a>
+          <a href="#who-is-affected" style="text-decoration:none;font-size:13.5px;color:#586780;padding:7px 0 7px 16px;margin-left:-1px;border-left:2px solid transparent;" style-hover="color:#E8623C;border-left-color:#E8623C;">2 · Does it apply to SaaS?</a>
+          <a href="#licensing" style="text-decoration:none;font-size:13.5px;color:#586780;padding:7px 0 7px 16px;margin-left:-1px;border-left:2px solid transparent;" style-hover="color:#E8623C;border-left-color:#E8623C;">3 · The processor route</a>
+          <a href="#stablecoins" style="text-decoration:none;font-size:13.5px;color:#586780;padding:7px 0 7px 16px;margin-left:-1px;border-left:2px solid transparent;" style-hover="color:#E8623C;border-left-color:#E8623C;">4 · Stablecoins for billing</a>
+          <a href="#path" style="text-decoration:none;font-size:13.5px;color:#586780;padding:7px 0 7px 16px;margin-left:-1px;border-left:2px solid transparent;" style-hover="color:#E8623C;border-left-color:#E8623C;">5 · The compliant path</a>
+          <a href="#checklist" style="text-decoration:none;font-size:13.5px;color:#586780;padding:7px 0 7px 16px;margin-left:-1px;border-left:2px solid transparent;" style-hover="color:#E8623C;border-left-color:#E8623C;">6 · Practical checklist</a>
+        </nav>
+      </aside>
+
+      <article style="flex:1 1 520px;min-width:0;">
+        <div style="border:1px solid rgba(232,98,60,0.2);background:rgba(232,98,60,0.05);border-radius:12px;padding:18px 20px;margin-bottom:40px;">
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#36435A;"><strong style="color:#C24A26;">Note:</strong> This is general, educational information — not legal, financial, or regulatory advice. Requirements depend on your business model and jurisdiction. Confirm specifics with qualified counsel.</p>
+        </div>
+
+        <h2 id="what-is-mica" style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:#0E1A2B;margin:0 0 14px;letter-spacing:-0.02em;scroll-margin-top:90px;">1 · What MiCA is</h2>
+        <p style="font-size:16px;line-height:1.75;color:#3E4B61;margin:0 0 16px;">MiCA — the EU's Markets in Crypto-Assets Regulation — is the first comprehensive, EU-wide framework for crypto-asset issuance and services. It replaces a patchwork of national rules with a single regime covering crypto-asset service providers (CASPs), stablecoin issuers and the conduct rules that apply when you handle crypto on behalf of customers.</p>
+        <p style="font-size:16px;line-height:1.75;color:#3E4B61;margin:0 0 16px;">For a SaaS business that wants to <em>accept</em> crypto for subscriptions or usage, the headline is this: handling crypto payments on behalf of customers is a regulated activity. You either become licensed yourself, or you bill through a provider that already is.</p>
+
+        <h2 id="who-is-affected" style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:#0E1A2B;margin:44px 0 14px;letter-spacing:-0.02em;scroll-margin-top:90px;">2 · Does it apply to SaaS?</h2>
+        <p style="font-size:16px;line-height:1.75;color:#3E4B61;margin:0 0 16px;">If your software charges customers in crypto — for a subscription, a usage-based invoice or a one-off — and especially if you convert it, hold balances, or settle to stablecoins, you're touching regulated activity. That's true whether you're a B2B SaaS, a dev tool, a usage-based platform or a marketplace.</p>
+        <ul style="margin:0 0 16px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:15.5px;line-height:1.6;color:#3E4B61;display:flex;gap:12px;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;flex-shrink:0;">—</span>Billing subscriptions or usage in crypto and converting to fiat or stablecoins.</li>
+          <li style="font-size:15.5px;line-height:1.6;color:#3E4B61;display:flex;gap:12px;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;flex-shrink:0;">—</span>Holding customer balances, credits or wallet top-ups.</li>
+          <li style="font-size:15.5px;line-height:1.6;color:#3E4B61;display:flex;gap:12px;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;flex-shrink:0;">—</span>Paying out to vendors, creators or partners on a marketplace.</li>
+        </ul>
+
+        <h2 id="licensing" style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:#0E1A2B;margin:44px 0 14px;letter-spacing:-0.02em;scroll-margin-top:90px;">3 · The processor route</h2>
+        <p style="font-size:16px;line-height:1.75;color:#3E4B61;margin:0 0 16px;">Becoming a licensed CASP is possible, but it's a multi-quarter project: capital requirements, governance, AML programs, audits and ongoing reporting. For a SaaS company whose product isn't payments, that's the wrong investment.</p>
+        <p style="font-size:16px;line-height:1.75;color:#3E4B61;margin:0 0 16px;">The pragmatic route is to bill through a <strong style="color:#182636;">MiCA-compliant, EU-regulated payment processor</strong>. The processor carries the licensing, KYC/KYB, monitoring and settlement obligations; you integrate their billing API and inherit a compliant flow. That's the model we build on — and the layer we wire into your SaaS.</p>
+        <div style="border-left:2px solid #E8623C;background:#FFFFFF;border-radius:0 10px 10px 0;padding:18px 22px;margin:24px 0;"><p style="margin:0;font-size:15px;line-height:1.65;color:#36435A;">Working through a regulated processor doesn't make compliance "someone else's problem" — you still have obligations. But it removes the need to hold a CASP license yourself, which is the expensive, slow part.</p></div>
+
+        <h2 id="stablecoins" style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:#0E1A2B;margin:44px 0 14px;letter-spacing:-0.02em;scroll-margin-top:90px;">4 · Stablecoins for billing</h2>
+        <p style="font-size:16px;line-height:1.75;color:#3E4B61;margin:0 0 16px;">MiCA introduced strict rules for stablecoins (e-money tokens and asset-referenced tokens): reserve backing, redemption rights and issuer authorization. For SaaS billing, the practical effect is that compliant, fiat-backed stablecoins become an ideal settlement layer — you get stable, predictable revenue without the volatility of holding raw crypto across a billing cycle.</p>
+        <p style="font-size:16px;line-height:1.75;color:#3E4B61;margin:0 0 16px;">In our integrations, subscription and usage revenue typically settles into MiCA-aligned stablecoins like EURXM, USDXM or RONXM, or out to fiat (EUR, USD, RON) — depending on your treasury and payout needs.</p>
+
+        <h2 id="path" style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:#0E1A2B;margin:44px 0 14px;letter-spacing:-0.02em;scroll-margin-top:90px;">5 · The compliant path</h2>
+        <p style="font-size:16px;line-height:1.75;color:#3E4B61;margin:0 0 16px;">Put simply: qualify your model and risk tier, onboard to a regulated processor, integrate the billing layer properly — subscriptions, dunning, webhooks — and keep it monitored. That's the sequence we run with every SaaS client, and the reason most go live in days rather than spinning up a compliance program from scratch.</p>
+
+        <h2 id="checklist" style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:#0E1A2B;margin:44px 0 14px;letter-spacing:-0.02em;scroll-margin-top:90px;">6 · Practical checklist</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin:0 0 8px;">
+          <div style="display:flex;gap:14px;background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:12px;padding:18px 20px;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;flex-shrink:0;">01</span><div style="font-size:15px;line-height:1.6;color:#36435A;">Confirm whether your billing activity is in scope and which obligations attach.</div></div>
+          <div style="display:flex;gap:14px;background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:12px;padding:18px 20px;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;flex-shrink:0;">02</span><div style="font-size:15px;line-height:1.6;color:#36435A;">Choose a regulated processor and verify its license covers your use case, region and risk tier.</div></div>
+          <div style="display:flex;gap:14px;background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:12px;padding:18px 20px;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;flex-shrink:0;">03</span><div style="font-size:15px;line-height:1.6;color:#36435A;">Complete KYC/KYB onboarding and define settlement &amp; payout currencies.</div></div>
+          <div style="display:flex;gap:14px;background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:12px;padding:18px 20px;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;flex-shrink:0;">04</span><div style="font-size:15px;line-height:1.6;color:#36435A;">Integrate subscriptions, webhooks, dunning and reconciliation — then monitor it in production.</div></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <dc-import name="CTASection" edition="saas" hint-size="100%,440px"></dc-import>
+  <dc-import name="Footer" edition="saas" hint-size="100%,400px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    requestAnimationFrame(() => {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity .7s ease, transform .7s ease'; });
+      const io = new IntersectionObserver((ents) => { ents.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; io.unobserve(e.target); } }); }, { threshold: 0.08 });
+      els.forEach(el => io.observe(el));
+    });
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

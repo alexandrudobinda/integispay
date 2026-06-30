@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>About &amp; Contact — IntegisPay for SaaS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #EAEEF4; }
+  ::placeholder { color: #9AA7BC; }
+</style>
+</helmet>
+
+<div style="background:#EAEEF4;color:#182636;font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <dc-import name="Header" active="about" edition="saas" hint-size="100%,68px"></dc-import>
+
+  <!-- ABOUT -->
+  <section style="padding:72px 24px 40px;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#E8623C;margin-bottom:16px;">About IntegisPay</span>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.6vw,52px);line-height:1.06;letter-spacing:-0.03em;color:#0E1A2B;margin:0 0 20px;max-width:780px;">A payments-integration studio for SaaS &amp; software teams.</h1>
+      <p style="font-size:18px;line-height:1.65;color:#586780;margin:0;max-width:680px;">We're engineers who specialize in one thing: connecting SaaS and software companies to a MiCA-compliant, EU-regulated payment stack — and doing the integration for you. We've shipped subscriptions, usage-based billing, dunning, crypto + fiat checkout and stablecoin settlement into B2B tools, dev platforms and subscription apps. We move fast because this is all we do.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section style="padding:24px 24px 72px;">
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;align-items:start;">
+
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div id="book" style="scroll-margin-top:90px;background:linear-gradient(180deg,#FFFFFF,#F4F7FB);border:1px solid rgba(232,98,60,0.25);border-radius:18px;padding:30px;box-shadow:0 1px 3px rgba(13,27,46,0.05);">
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;color:#0E1A2B;margin:0 0 10px;letter-spacing:-0.02em;">Book a free integration call</h2>
+          <p style="margin:0 0 20px;font-size:15px;line-height:1.6;color:#586780;">A 30-minute call to map your billing needs, confirm compliance fit and scope a go-live plan. No commitment, no sales pressure — just a clear picture of what your integration looks like.</p>
+          <a href="#contact-form" style="display:inline-block;background:#E8623C;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:15px;padding:13px 24px;border-radius:11px;box-shadow:0 6px 22px rgba(232,98,60,0.3);">Request a call</a>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:18px;padding:30px;box-shadow:0 1px 3px rgba(13,27,46,0.05);">
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#0E1A2B;margin:0 0 18px;">What to expect</h3>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;gap:13px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E8623C;flex-shrink:0;margin-top:1px;">01</span><div style="font-size:14px;line-height:1.55;color:#586780;"><strong style="color:#1B2A3F;font-weight:600;">Reply within 1 business day</strong> with next steps.</div></div>
+            <div style="display:flex;gap:13px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E8623C;flex-shrink:0;margin-top:1px;">02</span><div style="font-size:14px;line-height:1.55;color:#586780;"><strong style="color:#1B2A3F;font-weight:600;">Compliance &amp; risk-tier check</strong> for your model and region.</div></div>
+            <div style="display:flex;gap:13px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#E8623C;flex-shrink:0;margin-top:1px;">03</span><div style="font-size:14px;line-height:1.55;color:#586780;"><strong style="color:#1B2A3F;font-weight:600;">A scoped go-live plan</strong> with timeline and what's included.</div></div>
+          </div>
+          <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(13,27,46,0.08);"><a href="mailto:hello@integispay.com" style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#C24A26;text-decoration:none;">hello@integispay.com</a></div>
+        </div>
+      </div>
+
+      <div id="contact-form" style="scroll-margin-top:90px;background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:18px;padding:32px;box-shadow:0 1px 3px rgba(13,27,46,0.05);">
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center;padding:30px 10px;">
+            <div style="width:54px;height:54px;border-radius:50%;background:rgba(232,98,60,0.1);border:1px solid rgba(232,98,60,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4 10-10" stroke="#E8623C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;color:#0E1A2B;margin:0 0 10px;">Thanks — we'll be in touch.</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#586780;">We've received your details and will reply within one business day to set up your integration call.</p>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <h2 style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;color:#0E1A2B;margin:0 0 6px;letter-spacing:-0.02em;">Tell us about your project</h2>
+            <p style="margin:0 0 24px;font-size:14px;color:#7E8BA0;">All fields help us scope accurately. We reply within one business day.</p>
+            <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:18px;">
+              <div style="display:flex;flex-direction:column;gap:7px;">
+                <label style="font-size:13px;font-weight:500;color:#586780;">Name</label>
+                <input type="text" value="{{ name }}" onChange="{{ onName }}" placeholder="Your name" style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.16);border-radius:10px;padding:12px 14px;font-size:14.5px;color:#0E1A2B;font-family:'IBM Plex Sans',sans-serif;outline:none;" style-focus="border-color:#E8623C;box-shadow:0 0 0 3px rgba(232,98,60,0.15);"></input>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:7px;">
+                <label style="font-size:13px;font-weight:500;color:#586780;">Company</label>
+                <input type="text" value="{{ business }}" onChange="{{ onBusiness }}" placeholder="Company / product name" style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.16);border-radius:10px;padding:12px 14px;font-size:14.5px;color:#0E1A2B;font-family:'IBM Plex Sans',sans-serif;outline:none;" style-focus="border-color:#E8623C;box-shadow:0 0 0 3px rgba(232,98,60,0.15);"></input>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:7px;">
+                <label style="font-size:13px;font-weight:500;color:#586780;">Billing model</label>
+                <select value="{{ useCase }}" onChange="{{ onUseCase }}" style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.16);border-radius:10px;padding:12px 14px;font-size:14.5px;color:#0E1A2B;font-family:'IBM Plex Sans',sans-serif;outline:none;appearance:none;cursor:pointer;" style-focus="border-color:#E8623C;box-shadow:0 0 0 3px rgba(232,98,60,0.15);">
+                  <option value="">Select your billing model…</option>
+                  <option value="subscriptions">Recurring subscriptions</option>
+                  <option value="usage">Usage-based / metered</option>
+                  <option value="high-ticket">High-ticket / annual contracts</option>
+                  <option value="marketplace">Marketplace / split payouts</option>
+                  <option value="devtool">Dev tool / API platform</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:7px;">
+                <label style="font-size:13px;font-weight:500;color:#586780;">Current setup</label>
+                <input type="text" value="{{ setup }}" onChange="{{ onSetup }}" placeholder="e.g. card-only today, or using X" style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.16);border-radius:10px;padding:12px 14px;font-size:14.5px;color:#0E1A2B;font-family:'IBM Plex Sans',sans-serif;outline:none;" style-focus="border-color:#E8623C;box-shadow:0 0 0 3px rgba(232,98,60,0.15);"></input>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:7px;">
+                <label style="font-size:13px;font-weight:500;color:#586780;">Message</label>
+                <textarea value="{{ message }}" onChange="{{ onMessage }}" rows="4" placeholder="What do you want to bill, in which currencies, and by when?" style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.16);border-radius:10px;padding:12px 14px;font-size:14.5px;color:#0E1A2B;font-family:'IBM Plex Sans',sans-serif;outline:none;resize:vertical;" style-focus="border-color:#E8623C;box-shadow:0 0 0 3px rgba(232,98,60,0.15);"></textarea>
+              </div>
+              <button type="submit" style="background:#E8623C;color:#FFFFFF;border:none;font-weight:600;font-size:15px;padding:14px 24px;border-radius:11px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;box-shadow:0 6px 22px rgba(232,98,60,0.3);transition:transform .15s;" style-hover="transform:translateY(-1px);">Send &amp; request a call</button>
+              <p style="margin:0;font-size:12px;line-height:1.55;color:#9AA7BC;text-align:center;">By submitting you agree to be contacted about your integration. We don't share your details.</p>
+            </form>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" edition="saas" hint-size="100%,400px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { name: '', business: '', useCase: '', setup: '', message: '', submitted: false };
+
+  renderVals() {
+    const set = (k) => (e) => this.setState({ [k]: e.target.value });
+    return {
+      name: this.state.name,
+      business: this.state.business,
+      useCase: this.state.useCase,
+      setup: this.state.setup,
+      message: this.state.message,
+      submitted: this.state.submitted,
+      showForm: !this.state.submitted,
+      onName: set('name'),
+      onBusiness: set('business'),
+      onUseCase: set('useCase'),
+      onSetup: set('setup'),
+      onMessage: set('message'),
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

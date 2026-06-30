@@ -2,10 +2,18 @@ export function Logo({ size = 28, fontSize = 18 }: { size?: number; fontSize?: n
   return (
     <>
       <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <rect x="1" y="1" width="30" height="30" rx="8" fill="#FFFFFF" stroke="rgba(18,179,154,0.45)" />
+        <rect
+          x="1"
+          y="1"
+          width="30"
+          height="30"
+          rx="8"
+          fill="#FFFFFF"
+          stroke="rgba(var(--accent-rgb), 0.45)"
+        />
         <path
           d="M9 21 L16 7 L23 21"
-          stroke="#12B39A"
+          stroke="var(--accent)"
           strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"

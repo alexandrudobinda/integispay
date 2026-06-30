@@ -1,328 +1,116 @@
 import Link from "next/link";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { CtaSection } from "@/components/CtaSection";
-import { Reveal } from "@/components/Reveal";
-import { HomeCodePanel } from "@/components/CodePanel";
-import { ShieldCheck, Globe, Chevrons, Pin } from "@/components/Icons";
+import { Chevrons, Lines } from "@/components/Icons";
 
-export default function HomePage() {
+export default function WelcomePage() {
   return (
-    <>
-      <Header active="home" />
+    <div className="welcome">
+      {/* ambient */}
+      <div className="welcome-glow teal" />
+      <div className="welcome-glow coral" />
+      <div className="welcome-texture" />
 
-      {/* HERO */}
-      <section className="hero">
-        <div className="glow glow-1" />
-        <div className="glow glow-2" />
-        <div className="grid-texture" />
-        <div className="hero-inner">
-          <div className="hero-copy">
-            <div className="pill">
-              <span className="pill-dot" />
-              <span className="pill-text">
-                Built on a MiCA-compliant, EU-regulated processor
-              </span>
-            </div>
-            <h1>
-              Accept crypto + fiat <span className="teal">the compliant way</span> — integrated
-              for you.
-            </h1>
-            <p className="hero-sub">
-              We&apos;re a specialist payments-integration studio. We connect crypto-native and
-              Web3 businesses to a regulated payment stack — crypto and fiat, multi-chain, with
-              stablecoin settlement — so you go live in days, not months. Your team doesn&apos;t
-              build it. Ours does.
-            </p>
-            <div className="btn-row hero-buttons">
-              <Link href="/contact#book" className="btn btn-primary">
-                Book a free integration call
-              </Link>
-              <Link href="/crypto-integrations" className="btn btn-ghost">
-                How the integration works
-              </Link>
-            </div>
-            <div className="trusted-line">
-              <span className="label">Trusted approach for:</span>
-              <span className="items">
-                Exchanges · NFT/GameFi · dApps · Crypto SaaS · Marketplaces
-              </span>
-            </div>
-          </div>
-          <HomeCodePanel />
-        </div>
-      </section>
-
-      {/* TRUST BAR */}
-      <Reveal className="trustbar-wrap">
-        <div className="trustbar">
-          <span className="trust-item">
-            <ShieldCheck />
-            MiCA-compliant
+      {/* minimal brand bar — logo links to Welcome */}
+      <header className="welcome-bar">
+        <Link href="/" className="logo">
+          <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="30" height="30" rx="8" fill="#FFFFFF" stroke="rgba(124,108,240,0.4)" />
+            <path
+              d="M9 21 L16 7 L23 21"
+              stroke="#12B39A"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path d="M12 16 L20 16" stroke="#E8623C" strokeWidth="2.2" strokeLinecap="round" />
+          </svg>
+          <span className="welcome-logo-word">
+            Integis<span style={{ color: "#12B39A" }}>P</span>
+            <span style={{ color: "#E8623C" }}>ay</span>
           </span>
-          <span className="trust-divider" />
-          <span className="trust-item">
-            <Globe />
-            EU-regulated processor
-          </span>
-          <span className="trust-divider" />
-          <span className="trust-mono">BTC · ETH · SOL · SUI · EGLD</span>
-          <span className="trust-divider" />
-          <span className="trust-mono">EURXM · USDXM · RONXM</span>
-        </div>
-      </Reveal>
+        </Link>
+      </header>
 
-      {/* PROBLEM */}
-      <Reveal className="section">
-        <div className="container">
-          <div className="section-head" style={{ marginBottom: 48 }}>
-            <span className="eyebrow">The problem</span>
-            <h2>Accepting crypto compliantly got harder. Building it in-house got slower.</h2>
+      {/* selector */}
+      <main className="welcome-main">
+        <div className="welcome-head">
+          <div className="welcome-badge">
+            <span className="dot7" />
+            <span>MiCA-compliant · EU-regulated processor · done for you</span>
           </div>
-          <div className="grid grid-3">
-            <div className="card">
-              <h3>Regulatory complexity</h3>
-              <p>
-                Post-MiCA, accepting crypto in the EU means licensed processing, KYC/KYB,
-                travel-rule data and stablecoin rules. Getting it wrong is existential.
-              </p>
-            </div>
-            <div className="card">
-              <h3>Fragmented tooling</h3>
-              <p>
-                Chains, wallets, on/off-ramps, settlement and reconciliation rarely speak the
-                same language. Stitching them together is a project on its own.
-              </p>
-            </div>
-            <div className="card">
-              <h3>No time to build it</h3>
-              <p>
-                Your engineers should ship your product — not spend a quarter on payment
-                plumbing, webhook retries and edge-case settlement logic.
-              </p>
-            </div>
-          </div>
+          <h1>Accept crypto + fiat, the compliant way.</h1>
+          <p>
+            We integrate a regulated crypto + fiat payment stack into your product — so you go
+            live in days, not months. Choose the path that fits your business.
+          </p>
         </div>
-      </Reveal>
 
-      {/* WHAT WE DO */}
-      <Reveal className="section tight-top" >
-        <div className="container">
-          <div className="section-head" style={{ marginBottom: 44 }}>
-            <span className="eyebrow">What we do</span>
-            <h2>A done-for-you payment integration, end to end.</h2>
-          </div>
-          <div className="grid grid-feature">
-            <div className="feature-card">
-              <div className="icon-tile">
-                <ShieldCheck size={22} />
+        <div className="welcome-cards">
+          {/* CRYPTO (order:2 / right) */}
+          <Link href="/crypto" className="welcome-card crypto">
+            <div className="welcome-card-top">
+              <div className="welcome-icon">
+                <Chevrons size={24} color="#12B39A" />
               </div>
-              <h3>1 · Compliance qualification</h3>
-              <p>
-                We assess your model against the regulated processor&apos;s requirements —
-                jurisdiction, business type, KYC/KYB and settlement currency — so you know you
-                qualify before a line of code.
-              </p>
-              <ul className="bullet-list">
-                <li>
-                  <span className="arrow">→</span>Eligibility &amp; jurisdiction review
-                </li>
-                <li>
-                  <span className="arrow">→</span>KYC / KYB onboarding support
-                </li>
-                <li>
-                  <span className="arrow">→</span>Settlement &amp; payout planning
-                </li>
-              </ul>
+              <span className="welcome-edition">Edition A</span>
             </div>
-            <div className="feature-card core">
-              <span className="core-badge">CORE</span>
-              <div className="icon-tile strong">
-                <Chevrons size={22} />
-              </div>
-              <h3>2 · Technical integration</h3>
-              <p>
-                We build the integration into your product: Crypto API, hosted checkout, payment
-                links, recurring billing and multi-chain webhooks — tested, monitored and handed
-                over clean.
-              </p>
-              <ul className="bullet-list">
-                <li>
-                  <span className="arrow">→</span>Crypto API &amp; hosted checkout
-                </li>
-                <li>
-                  <span className="arrow">→</span>Recurring + payment links
-                </li>
-                <li>
-                  <span className="arrow">→</span>Webhooks, retries &amp; reconciliation
-                </li>
-              </ul>
-            </div>
-            <div className="feature-card">
-              <div className="icon-tile">
-                <Pin size={22} />
-              </div>
-              <h3>3 · Ongoing support</h3>
-              <p>
-                After go-live we stay on: monitoring, new chains and currencies, upgrades and
-                changes as the processor&apos;s API and your product evolve.
-              </p>
-              <ul className="bullet-list">
-                <li>
-                  <span className="arrow">→</span>Monitoring &amp; alerting
-                </li>
-                <li>
-                  <span className="arrow">→</span>New chains &amp; currencies
-                </li>
-                <li>
-                  <span className="arrow">→</span>API upgrades &amp; changes
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-
-      {/* HOW IT WORKS */}
-      <Reveal className="section" >
-        <div className="panel">
-          <div className="panel-head">
-            <span className="eyebrow">How it works</span>
-            <h2>Four steps from kickoff to scale.</h2>
-          </div>
-          <div className="steps-grid">
-            <div className="step">
-              <span className="step-num">01</span>
-              <h3>Qualify</h3>
-              <p>Free call to map your use case, confirm compliance fit and scope the build.</p>
-            </div>
-            <div className="step">
-              <span className="step-num">02</span>
-              <h3>Integrate</h3>
-              <p>
-                We build and test the integration into your product, against your stack and
-                flows.
-              </p>
-            </div>
-            <div className="step">
-              <span className="step-num">03</span>
-              <h3>Go live</h3>
-              <p>
-                Production checkout, payment links and webhooks — monitored, with a clean
-                handover.
-              </p>
-            </div>
-            <div className="step accent">
-              <span className="step-num">04</span>
-              <h3>Scale</h3>
-              <p>
-                Add chains, currencies and flows as you grow — with support that scales too.
-              </p>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-
-      {/* USE CASES */}
-      <Reveal className="section">
-        <div className="container">
-          <div className="section-head" style={{ marginBottom: 40 }}>
-            <span className="eyebrow">Who it&apos;s for</span>
-            <h2>Built for crypto-native &amp; Web3 commerce.</h2>
-          </div>
-          <div className="grid grid-usecase">
-            <div className="usecase-card">
-              <h3>Exchanges &amp; brokers</h3>
-              <p>Fiat on/off-ramp, deposits and withdrawals with compliant settlement.</p>
-            </div>
-            <div className="usecase-card">
-              <h3>NFT &amp; GameFi</h3>
-              <p>Mint, marketplace and in-game purchases in crypto or fiat, multi-chain.</p>
-            </div>
-            <div className="usecase-card">
-              <h3>dApps &amp; protocols</h3>
-              <p>Accept payments from app users without holding the regulatory burden.</p>
-            </div>
-            <div className="usecase-card">
-              <h3>Crypto SaaS</h3>
-              <p>Recurring subscriptions billed in stablecoins or fiat, with retries.</p>
-            </div>
-            <div className="usecase-card">
-              <h3>Web3 marketplaces</h3>
-              <p>Split payments and payouts to vendors across chains and currencies.</p>
-            </div>
-            <div className="usecase-card">
-              <h3>Token commerce</h3>
-              <p>Sell goods, memberships or access for tokens with compliant settlement.</p>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-
-      {/* STATS STRIP */}
-      <Reveal className="section">
-        <div className="stats-strip">
-          <div>
-            <div className="stat-num teal">5–10</div>
-            <div className="stat-label">days to live, typical integration</div>
-          </div>
-          <div>
-            <div className="stat-num">5+</div>
-            <div className="stat-label">chains supported (BTC, ETH, SOL, SUI, EGLD)</div>
-          </div>
-          <div>
-            <div className="stat-num">3</div>
-            <div className="stat-label">MiCA-aligned stablecoins (EURXM, USDXM, RONXM)</div>
-          </div>
-          <div>
-            <div className="stat-num">100%</div>
-            <div className="stat-label">done for you — no in-house build required</div>
-          </div>
-        </div>
-      </Reveal>
-
-      {/* CASE STUDY TEASER */}
-      <Reveal className="section">
-        <div className="teaser-grid">
-          <div className="teaser-card">
-            <div>
-              <span className="eyebrow">Case study</span>
-              <h3>NFT marketplace, live in 7 days with multi-chain checkout</h3>
-              <p>
-                A Web3 marketplace needed compliant fiat + crypto checkout across ETH, SOL and
-                SUI with EUR settlement. We scoped, integrated and shipped to production in a
-                single sprint.
-              </p>
-            </div>
-            <div className="teaser-stats">
-              <div className="teaser-stat">
-                <div className="big teal">7 days</div>
-                <div className="sub">to production</div>
-              </div>
-              <div className="teaser-stat">
-                <div className="big">3 chains</div>
-                <div className="sub">at launch</div>
-              </div>
-            </div>
-          </div>
-          <div className="quote-card">
-            <p className="quote">
-              &quot;They handled the entire payment integration — compliance, API, webhooks. We
-              focused on the product and went live in a week.&quot;
+            <h2>Crypto &amp; Web3</h2>
+            <p>
+              For exchanges, NFT &amp; GameFi, dApps and Web3 marketplaces. Multi-chain
+              acceptance, stablecoin settlement and a compliant fiat off-ramp — integrated for
+              you.
             </p>
-            <div className="author">
-              <div className="avatar" />
-              <div>
-                <div className="name">Founder (placeholder)</div>
-                <div className="role">Web3 marketplace</div>
-              </div>
+            <div className="welcome-chips">
+              <span className="welcome-chip">Multi-chain</span>
+              <span className="welcome-chip">Fiat off-ramp</span>
+              <span className="welcome-chip">BTC · ETH · SOL · SUI</span>
             </div>
-          </div>
-        </div>
-      </Reveal>
+            <span className="welcome-enter">
+              Enter Crypto &amp; Web3 <span className="arrow">→</span>
+            </span>
+          </Link>
 
-      <CtaSection />
-      <Footer />
-    </>
+          {/* SAAS (order:1 / left) */}
+          <Link href="/saas" className="welcome-card saas">
+            <div className="welcome-card-top">
+              <div className="welcome-icon">
+                <Lines size={24} color="#E8623C" />
+              </div>
+              <span className="welcome-edition">Edition B</span>
+            </div>
+            <h2>Software &amp; SaaS</h2>
+            <p>
+              For SaaS, dev tools and subscription platforms. Recurring billing, crypto + fiat
+              checkout, dunning and stablecoin settlement — built into your product so failed
+              payments stop quietly churning customers.
+            </p>
+            <div className="welcome-chips">
+              <span className="welcome-chip">Recurring billing</span>
+              <span className="welcome-chip">Dunning</span>
+              <span className="welcome-chip">card · crypto · stablecoin</span>
+            </div>
+            <span className="welcome-enter">
+              Enter Software &amp; SaaS <span className="arrow">→</span>
+            </span>
+          </Link>
+        </div>
+
+        <p className="welcome-help">
+          Not sure which fits? Choose a path above to get started — you can switch editions any
+          time from the header.
+        </p>
+      </main>
+
+      {/* footer disclaimer */}
+      <footer className="welcome-footer">
+        <div className="welcome-footer-inner">
+          <p>
+            IntegisPay is an independent integration partner — not affiliated with or speaking
+            on behalf of any payment processor. Nothing here is financial, legal or regulatory
+            advice.
+          </p>
+          <p>© 2026 IntegisPay</p>
+        </div>
+      </footer>
+    </div>
   );
 }

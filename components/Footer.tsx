@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { EDITIONS, type Edition } from "@/lib/editions";
 
-export function Footer() {
+export function Footer({ edition }: { edition: Edition }) {
+  const cfg = EDITIONS[edition];
   return (
     <footer className="footer">
       <div className="footer-inner">
@@ -10,27 +12,24 @@ export function Footer() {
             <Link href="/" className="logo">
               <Logo size={26} fontSize={17} />
             </Link>
-            <p>
-              Done-for-you crypto + fiat payment integration for crypto-native and Web3
-              businesses, built on a MiCA-compliant, EU-regulated processor.
-            </p>
+            <p>{cfg.footerBlurb}</p>
           </div>
 
           <div className="footer-col">
             <h4>Navigate</h4>
             <div className="footer-links">
-              <Link href="/">Home</Link>
-              <Link href="/crypto-integrations">Crypto Integrations</Link>
-              <Link href="/eu-mica">Crypto + Fiat in the EU</Link>
-              <Link href="/case-studies">Case Studies</Link>
-              <Link href="/contact">About / Contact</Link>
+              {cfg.footerLinks.map((l) => (
+                <Link key={l.href} href={l.href}>
+                  {l.label}
+                </Link>
+              ))}
             </div>
           </div>
 
           <div className="footer-col">
             <h4>Get started</h4>
             <div className="footer-links">
-              <Link href="/contact#book">Book a free integration call</Link>
+              <Link href={cfg.bookHref}>Book a free integration call</Link>
               <a href="mailto:hello@integispay.com">hello@integispay.com</a>
             </div>
             <div className="footer-tags">

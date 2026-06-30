@@ -3,18 +3,10 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
+import { EDITIONS, type Edition, type NavKey } from "@/lib/editions";
 
-type NavKey = "home" | "crypto" | "mica" | "cases" | "about";
-
-const LINKS: { href: string; label: string; key: NavKey }[] = [
-  { href: "/", label: "Home", key: "home" },
-  { href: "/crypto-integrations", label: "Crypto Integrations", key: "crypto" },
-  { href: "/eu-mica", label: "EU & MiCA", key: "mica" },
-  { href: "/case-studies", label: "Case Studies", key: "cases" },
-  { href: "/contact", label: "About", key: "about" },
-];
-
-export function Header({ active }: { active: NavKey }) {
+export function Header({ edition, active }: { edition: Edition; active: NavKey }) {
+  const cfg = EDITIONS[edition];
   const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [open, setOpen] = useState(false);
@@ -24,7 +16,7 @@ export function Header({ active }: { active: NavKey }) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    const mq = window.matchMedia("(max-width: 860px)");
+    const mq = window.matchMedia("(max-width: 980px)");
     const apply = () => {
       setIsMobile(mq.matches);
       setOpen(false);
@@ -43,12 +35,13 @@ export function Header({ active }: { active: NavKey }) {
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="header-bar">
+        {/* Logo always links to the Welcome selector */}
         <Link href="/" className="logo">
           <Logo />
         </Link>
 
         <nav className="nav-desktop">
-          {LINKS.map((l) => (
+          {cfg.headerLinks.map((l) => (
             <Link
               key={l.key}
               href={l.href}
@@ -57,13 +50,13 @@ export function Header({ active }: { active: NavKey }) {
               {l.label}
             </Link>
           ))}
-          <Link href="/contact#book" className="nav-cta">
+          <Link href={cfg.bookHref} className="nav-cta">
             Book a call
           </Link>
         </nav>
 
         <div className="nav-mobile">
-          <Link href="/contact#book" className="nav-cta-sm">
+          <Link href={cfg.bookHref} className="nav-cta-sm">
             Book a call
           </Link>
           <button
@@ -81,7 +74,7 @@ export function Header({ active }: { active: NavKey }) {
 
       {showMenu && (
         <nav className="mobile-menu">
-          {LINKS.map((l) => (
+          {cfg.headerLinks.map((l) => (
             <Link
               key={l.key}
               href={l.href}

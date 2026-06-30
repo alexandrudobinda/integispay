@@ -14,15 +14,31 @@ design references in [`/design`](./design).
 - Plain global CSS with design tokens — no UI kit, all icons inline SVG
 - Deploys to **Vercel** with zero config
 
-## Pages
+## Two editions, one brand
 
-| Route                   | Page              |
-| ----------------------- | ----------------- |
-| `/`                     | Home              |
-| `/crypto-integrations`  | Crypto Integrations |
-| `/eu-mica`              | EU & MiCA guide   |
-| `/case-studies`         | Case Studies      |
-| `/contact`              | About / Contact   |
+The site ships as **two editions under one brand**, plus a neutral front-door selector:
+
+- **Crypto & Web3** (teal accent) — `/crypto/*`
+- **Software & SaaS** (coral accent) — `/saas/*`
+
+Editions share every component; only the **accent color, copy and iconography** differ. The
+accent is themeable through CSS variables (`.ed-crypto` / `.ed-saas` wrappers), and the shared
+`Header` / `Footer` / `CtaSection` / `ContactForm` / `CodePanel` take an `edition` prop. The
+header logo always links back to the Welcome selector (there is no in-header edition switcher).
+
+| Route                   | Page                          |
+| ----------------------- | ----------------------------- |
+| `/`                     | Welcome (front-door selector) |
+| `/crypto`               | Crypto — Home                 |
+| `/crypto/integrations`  | Crypto — Integrations         |
+| `/crypto/mica`          | Crypto — EU & MiCA guide      |
+| `/crypto/cases`         | Crypto — Case Studies         |
+| `/crypto/about`         | Crypto — About / Contact      |
+| `/saas`                 | SaaS — Home                   |
+| `/saas/integrations`    | SaaS — Integrations           |
+| `/saas/mica`            | SaaS — EU & MiCA guide        |
+| `/saas/cases`           | SaaS — Case Studies           |
+| `/saas/about`           | SaaS — About / Contact        |
 
 ## Local development
 

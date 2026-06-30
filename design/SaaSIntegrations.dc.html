@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>SaaS Integrations — IntegisPay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #EAEEF4; }
+  @keyframes ip-drift { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-3%,4%) scale(1.08); } }
+</style>
+</helmet>
+
+<div style="background:#EAEEF4;color:#182636;font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <dc-import name="Header" active="crypto" edition="saas" hint-size="100%,68px"></dc-import>
+
+  <!-- PAGE HERO -->
+  <section style="position:relative;padding:72px 24px 56px;overflow:hidden;">
+    <div style="position:absolute;top:-100px;left:18%;width:620px;height:460px;background:radial-gradient(closest-side, rgba(232,98,60,0.13), rgba(232,98,60,0) 70%);filter:blur(8px);animation:ip-drift 17s ease-in-out infinite;pointer-events:none;"></div>
+    <div style="position:relative;max-width:920px;margin:0 auto;text-align:center;">
+      <span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#E8623C;margin-bottom:18px;">Software &amp; SaaS</span>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-0.03em;color:#0E1A2B;margin:0 0 20px;">Subscription billing, integrated into your product.</h1>
+      <p style="font-size:18px;line-height:1.6;color:#586780;margin:0 auto 30px;max-width:640px;">Recurring &amp; usage-based billing, crypto + fiat checkout, dunning and stablecoin settlement — built into your SaaS by us, on a MiCA-compliant processor. Production-ready in days, with the edge cases handled.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="Contact-SaaS.dc.html#book" style="background:#E8623C;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:15.5px;padding:14px 26px;border-radius:11px;box-shadow:0 6px 26px rgba(232,98,60,0.3);">Book a free integration call</a>
+        <a href="MiCAGuide-SaaS.dc.html" style="background:rgba(13,27,46,0.05);color:#182636;text-decoration:none;font-weight:500;font-size:15.5px;padding:14px 24px;border-radius:11px;border:1px solid rgba(13,27,46,0.16);">How MiCA applies to SaaS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section data-reveal style="padding:64px 24px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="max-width:700px;margin-bottom:44px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#E8623C;">The hard parts</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.8vw,40px);line-height:1.1;letter-spacing:-0.025em;color:#0E1A2B;margin:14px 0 0;">What makes SaaS billing painful — and how we remove it.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;">
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:28px;">
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#0E1A2B;margin:0 0 10px;">Recurring &amp; proration</h3>
+          <p style="margin:0 0 14px;font-size:14.5px;line-height:1.6;color:#586780;">Plans, trials, upgrades, downgrades and mid-cycle proration are a deceptive amount of logic to build and keep correct.</p>
+          <p style="margin:0;font-size:13.5px;line-height:1.55;color:#36435A;border-top:1px solid rgba(13,27,46,0.09);padding-top:12px;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;">→ </span>We integrate subscriptions with trials, proration and plan changes handled end to end.</p>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:28px;">
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#0E1A2B;margin:0 0 10px;">Failed-payment churn</h3>
+          <p style="margin:0 0 14px;font-size:14.5px;line-height:1.6;color:#586780;">Soft declines and expired cards silently cancel paying customers. Recovery needs retries, dunning and fallbacks.</p>
+          <p style="margin:0;font-size:13.5px;line-height:1.55;color:#36435A;border-top:1px solid rgba(13,27,46,0.09);padding-top:12px;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;">→ </span>We wire smart retries, dunning emails and a crypto/stablecoin fallback to recover revenue.</p>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:28px;">
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#0E1A2B;margin:0 0 10px;">Cross-border &amp; multi-currency</h3>
+          <p style="margin:0 0 14px;font-size:14.5px;line-height:1.6;color:#586780;">Global customers want to pay in their currency — and increasingly in stablecoins. FX and settlement add friction.</p>
+          <p style="margin:0;font-size:13.5px;line-height:1.55;color:#36435A;border-top:1px solid rgba(13,27,46,0.09);padding-top:12px;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;">→ </span>We set up multi-currency charging with settlement to EURXM, USDXM, RONXM or fiat.</p>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(13,27,46,0.09);border-radius:14px;padding:28px;">
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#0E1A2B;margin:0 0 10px;">Usage-based metering</h3>
+          <p style="margin:0 0 14px;font-size:14.5px;line-height:1.6;color:#586780;">Metered API calls, seats or events need accurate aggregation, invoicing and reconciliation your finance team trusts.</p>
+          <p style="margin:0;font-size:13.5px;line-height:1.55;color:#36435A;border-top:1px solid rgba(13,27,46,0.09);padding-top:12px;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;">→ </span>We integrate metering and usage-based invoicing without you building a billing engine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED + CODE -->
+  <section data-reveal style="padding:24px 24px 72px;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px;align-items:start;">
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#E8623C;">What the integration includes</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,36px);line-height:1.1;letter-spacing:-0.025em;color:#0E1A2B;margin:14px 0 24px;">A complete billing layer — not a snippet you finish yourself.</h2>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(13,27,46,0.08);"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;font-size:13px;flex-shrink:0;margin-top:2px;">01</span><div><div style="font-size:15px;font-weight:600;color:#182636;font-family:'Space Grotesk',sans-serif;">Subscriptions &amp; hosted checkout</div><div style="font-size:14px;color:#586780;line-height:1.55;margin-top:3px;">Plans, trials and proration with a checkout that takes cards and crypto, themed to your product.</div></div></div>
+          <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(13,27,46,0.08);"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;font-size:13px;flex-shrink:0;margin-top:2px;">02</span><div><div style="font-size:15px;font-weight:600;color:#182636;font-family:'Space Grotesk',sans-serif;">Dunning &amp; failed-payment recovery</div><div style="font-size:14px;color:#586780;line-height:1.55;margin-top:3px;">Retry schedules, dunning flows and fallbacks that win back revenue instead of churning it.</div></div></div>
+          <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(13,27,46,0.08);"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;font-size:13px;flex-shrink:0;margin-top:2px;">03</span><div><div style="font-size:15px;font-weight:600;color:#182636;font-family:'Space Grotesk',sans-serif;">Usage-based &amp; metered billing</div><div style="font-size:14px;color:#586780;line-height:1.55;margin-top:3px;">Meter seats, API calls or events and bill per-usage with accurate invoicing.</div></div></div>
+          <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(13,27,46,0.08);"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;font-size:13px;flex-shrink:0;margin-top:2px;">04</span><div><div style="font-size:15px;font-weight:600;color:#182636;font-family:'Space Grotesk',sans-serif;">Webhooks &amp; subscription events</div><div style="font-size:14px;color:#586780;line-height:1.55;margin-top:3px;">Signed, idempotent webhooks for renewals, failures and cancellations with retries.</div></div></div>
+          <div style="display:flex;gap:14px;padding:14px 0;"><span style="color:#E8623C;font-family:'IBM Plex Mono',monospace;font-size:13px;flex-shrink:0;margin-top:2px;">05</span><div><div style="font-size:15px;font-weight:600;color:#182636;font-family:'Space Grotesk',sans-serif;">Settlement &amp; reconciliation</div><div style="font-size:14px;color:#586780;line-height:1.55;margin-top:3px;">Settlement into your chosen currency, with reconciliation your finance team can trust.</div></div></div>
+        </div>
+      </div>
+
+      <div style="position:sticky;top:90px;">
+        <div style="border:1px solid rgba(13,27,46,0.11);border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#F4F7FB);box-shadow:0 24px 60px rgba(13,27,46,0.1);overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid rgba(13,27,46,0.09);">
+            <span style="width:10px;height:10px;border-radius:50%;background:#C9D2DF;"></span><span style="width:10px;height:10px;border-radius:50%;background:#C9D2DF;"></span><span style="width:10px;height:10px;border-radius:50%;background:#C9D2DF;"></span>
+            <span style="margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7E8BA0;">subscription-webhook.ts</span>
+          </div>
+          <pre style="margin:0;padding:20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.8;color:#36435A;overflow-x:auto;"><span style="display:block;color:#93A0B4;">// verify signature, then act on the event</span><span style="display:block;"><span style="color:#E8623C;">app</span>.post(<span style="color:#0E8C5E;">"/hooks/billing"</span>, (req, res) => &#123;</span><span style="display:block;">  <span style="color:#E8623C;">const</span> ok = verifySignature(req, secret);</span><span style="display:block;">  <span style="color:#E8623C;">if</span> (!ok) <span style="color:#E8623C;">return</span> res.status(<span style="color:#B07A12;">400</span>).end();</span><span style="display:block;"> </span><span style="display:block;">  <span style="color:#E8623C;">switch</span> (req.body.event) &#123;</span><span style="display:block;">    <span style="color:#E8623C;">case</span> <span style="color:#0E8C5E;">"invoice.paid"</span>:</span><span style="display:block;">      grantAccess(req.body.customer);</span><span style="display:block;">      <span style="color:#E8623C;">break</span>;</span><span style="display:block;">    <span style="color:#E8623C;">case</span> <span style="color:#0E8C5E;">"payment.failed"</span>:</span><span style="display:block;">      startDunning(req.body.subscription); <span style="color:#93A0B4;">// retry</span></span><span style="display:block;">  &#125;</span><span style="display:block;">  res.status(<span style="color:#B07A12;">200</span>).end();</span><span style="display:block;">&#125;);</span></pre>
+          <div style="padding:12px 16px;border-top:1px solid rgba(13,27,46,0.09);display:flex;justify-content:space-between;align-items:center;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7E8BA0;">Signed · idempotent · retried</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#93A0B4;">illustrative</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODS & SETTLEMENT -->
+  <section data-reveal style="padding:0 24px 72px;">
+    <div style="max-width:1200px;margin:0 auto;border:1px solid rgba(13,27,46,0.09);border-radius:20px;background:#F2F5F9;padding:44px 40px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px;">
+        <div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#0E1A2B;margin:0 0 16px;letter-spacing:-0.01em;">Payment methods at checkout</h3>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#36435A;background:#FFFFFF;border:1px solid rgba(13,27,46,0.11);border-radius:8px;padding:8px 14px;">Card</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#36435A;background:#FFFFFF;border:1px solid rgba(13,27,46,0.11);border-radius:8px;padding:8px 14px;">BTC</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#36435A;background:#FFFFFF;border:1px solid rgba(13,27,46,0.11);border-radius:8px;padding:8px 14px;">ETH</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#36435A;background:#FFFFFF;border:1px solid rgba(13,27,46,0.11);border-radius:8px;padding:8px 14px;">SOL</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#36435A;background:#FFFFFF;border:1px solid rgba(13,27,46,0.11);border-radius:8px;padding:8px 14px;">USDC</span>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#0E1A2B;margin:0 0 16px;letter-spacing:-0.01em;">Stablecoins &amp; settlement</h3>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C24A26;background:rgba(232,98,60,0.08);border:1px solid rgba(232,98,60,0.22);border-radius:8px;padding:8px 14px;">EURXM</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C24A26;background:rgba(232,98,60,0.08);border:1px solid rgba(232,98,60,0.22);border-radius:8px;padding:8px 14px;">USDXM</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#C24A26;background:rgba(232,98,60,0.08);border:1px solid rgba(232,98,60,0.22);border-radius:8px;padding:8px 14px;">RONXM</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#36435A;background:#FFFFFF;border:1px solid rgba(13,27,46,0.11);border-radius:8px;padding:8px 14px;">EUR · USD · RON payouts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section data-reveal style="padding:0 24px 72px;">
+    <div style="max-width:980px;margin:0 auto;background:linear-gradient(180deg,#FFFFFF,#F4F7FB);border:1px solid rgba(13,27,46,0.1);border-radius:18px;padding:40px;">
+      <p style="font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.6vw,26px);line-height:1.4;color:#0E1A2B;font-weight:500;margin:0 0 24px;letter-spacing:-0.015em;">"We wanted subscriptions plus a crypto option and didn't want to staff a billing team. They scoped it, built it and handed over a clean, monitored integration — dunning and all."</p>
+      <div style="display:flex;align-items:center;gap:12px;"><div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#E8623C,#F2A07E);"></div><div><div style="font-size:14px;color:#182636;font-weight:500;">VP Engineering (placeholder)</div><div style="font-size:13px;color:#7E8BA0;">B2B SaaS platform</div></div></div>
+    </div>
+  </section>
+
+  <dc-import name="CTASection" edition="saas" hint-size="100%,440px"></dc-import>
+  <dc-import name="Footer" edition="saas" hint-size="100%,400px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    requestAnimationFrame(() => {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)'; });
+      const io = new IntersectionObserver((ents) => { ents.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; io.unobserve(e.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+      els.forEach(el => io.observe(el));
+    });
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
