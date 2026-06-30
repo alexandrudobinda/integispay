@@ -21,7 +21,6 @@ export default function WelcomePage() {
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-            <path d="M12 16 L20 16" stroke="#E8623C" strokeWidth="2.2" strokeLinecap="round" />
           </svg>
           <span className="welcome-logo-word">
             Integis<span style={{ color: "#12B39A" }}>P</span>

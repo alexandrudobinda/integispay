@@ -18,7 +18,6 @@ export function Logo({ size = 28, fontSize = 18 }: { size?: number; fontSize?: n
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        <path d="M12 16 L20 16" stroke="#7C6CF0" strokeWidth="2.2" strokeLinecap="round" />
       </svg>
       <span className="logo-word" style={{ fontSize }}>
         Integis<span className="pay">Pay</span>
