@@ -64,30 +64,29 @@ This builds the standalone Next.js output and serves it the same way it runs in 
 3. Framework preset is auto-detected as **Next.js** — no settings to change.
 4. Deploy. Every push to the default branch ships a new production deployment.
 
-## Contact form → SendGrid
+## Contact form → Slack
 
-The contact form posts to a server route (`app/api/contact/route.ts`) that emails the lead via
-SendGrid (`@sendgrid/mail`). The API key lives only on the server — never in client code.
+The contact form posts to a server route (`app/api/contact/route.ts`) that sends each lead as a
+message to a Slack channel via an **Incoming Webhook** (push notification on the Slack mobile app).
+The webhook URL lives only on the server — never in client code.
 
 **Setup**
 
-1. In SendGrid → **Settings → API Keys**, create a key with **Mail Send** permission.
-2. Verify a **Single Sender** (the `From` address) under **Settings → Sender Authentication**.
-3. Copy `.env.example` to `.env.local` and fill in:
+1. Create the webhook at **https://api.slack.com/apps** → *Create New App* → *From scratch* →
+   *Incoming Webhooks* → *Activate* → *Add New Webhook to Workspace* → pick a channel → copy the URL
+   (`https://hooks.slack.com/services/...`).
+2. Copy `.env.example` to `.env.local` and fill in:
 
    ```
-   SENDGRID_API_KEY=SG.xxxxx
-   CONTACT_FROM_EMAIL=hello@integispay.com   # must be a verified sender
-   CONTACT_TO_EMAIL=hello@integispay.com     # where leads are delivered
+   SLACK_WEBHOOK_URL=https://hooks.slack.com/services/XXX/YYY/ZZZ
    ```
 
-4. **Local dev:** `npm run dev` (Next loads `.env.local` automatically).
-5. **Docker:** `docker compose --env-file .env.local up --build` (passes the vars into the container).
-6. **Vercel:** add the three variables under **Project → Settings → Environment Variables**, then redeploy.
+3. **Local dev:** `npm run dev` (Next loads `.env.local` automatically).
+4. **Docker:** `docker compose --env-file .env.local up --build` (passes the var into the container).
+5. **Vercel:** add `SLACK_WEBHOOK_URL` under **Project → Settings → Environment Variables**, then redeploy.
 
-The form validates name/email/message, shows a sending + error state, and replies are set to the
-submitter's email (`replyTo`). For higher deliverability, switch the sender to **Domain
-Authentication** later.
+The form validates name/email/message and shows a sending + error state. To get notified on your
+phone, install the Slack mobile app and enable notifications for the channel.
 
 ## Notes before launch
 

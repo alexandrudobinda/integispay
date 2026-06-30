@@ -1,29 +1,22 @@
 import { NextResponse } from "next/server";
-import sgMail from "@sendgrid/mail";
 
-// Runs on the Node.js runtime (SendGrid SDK), and must be dynamic (it sends mail).
+// Runs on the Node.js runtime, and must be dynamic (it posts to Slack).
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "hello@integispay.com";
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "hello@integispay.com";
-
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Slack mrkdwn requires escaping these three characters.
 function esc(s: string) {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
 export async function POST(req: Request) {
-  const apiKey = process.env.SENDGRID_API_KEY;
-  if (!apiKey) {
-    console.error("SENDGRID_API_KEY is not set — cannot send contact email.");
+  const webhook = process.env.SLACK_WEBHOOK_URL;
+  if (!webhook) {
+    console.error("SLACK_WEBHOOK_URL is not set — cannot send contact notification.");
     return NextResponse.json(
-      { error: "Email service is not configured." },
+      { error: "Notifications are not configured." },
       { status: 500 }
     );
   }
@@ -57,50 +50,52 @@ export async function POST(req: Request) {
   }
 
   const fieldLabel = edition === "saas" ? "Billing model" : "Use case";
-  const rows: [string, string][] = [
-    ["Edition", edition],
-    ["Name", name],
-    ["Email", email],
-    ["Business", business || "—"],
-    [fieldLabel, useCase || "—"],
-    ["Current setup", setup || "—"],
-  ];
 
-  const text =
-    rows.map(([k, v]) => `${k}: ${v}`).join("\n") + `\n\nMessage:\n${message}`;
-
-  const html = `
-    <div style="font-family:Arial,Helvetica,sans-serif;color:#182636;font-size:14px;line-height:1.6;">
-      <h2 style="margin:0 0 16px;">New integration enquiry</h2>
-      <table style="border-collapse:collapse;">
-        ${rows
-          .map(
-            ([k, v]) =>
-              `<tr><td style="padding:4px 16px 4px 0;color:#586780;">${esc(
-                k
-              )}</td><td style="padding:4px 0;font-weight:600;">${esc(v)}</td></tr>`
-          )
-          .join("")}
-      </table>
-      <p style="margin:16px 0 4px;color:#586780;">Message:</p>
-      <p style="margin:0;white-space:pre-wrap;">${esc(message)}</p>
-    </div>`;
-
-  sgMail.setApiKey(apiKey);
+  const payload = {
+    text: `New ${edition} enquiry from ${name} (${email})`,
+    blocks: [
+      {
+        type: "header",
+        text: { type: "plain_text", text: `📩 New ${edition} enquiry`, emoji: true },
+      },
+      {
+        type: "section",
+        fields: [
+          { type: "mrkdwn", text: `*Name:*\n${esc(name)}` },
+          { type: "mrkdwn", text: `*Email:*\n${esc(email)}` },
+          { type: "mrkdwn", text: `*Business:*\n${esc(business) || "—"}` },
+          { type: "mrkdwn", text: `*${fieldLabel}:*\n${esc(useCase) || "—"}` },
+          { type: "mrkdwn", text: `*Current setup:*\n${esc(setup) || "—"}` },
+        ],
+      },
+      {
+        type: "section",
+        text: { type: "mrkdwn", text: `*Message:*\n${esc(message)}` },
+      },
+      {
+        type: "context",
+        elements: [{ type: "mrkdwn", text: `IntegisPay · ${edition} edition` }],
+      },
+    ],
+  };
 
   try {
-    await sgMail.send({
-      to: TO_EMAIL,
-      from: { email: FROM_EMAIL, name: "IntegisPay Website" },
-      replyTo: { email, name },
-      subject: `New ${edition} enquiry — ${business || name}`,
-      text,
-      html,
+    const res = await fetch(webhook, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     });
+    if (!res.ok) {
+      const body = await res.text().catch(() => "");
+      console.error("Slack webhook failed:", res.status, body);
+      return NextResponse.json(
+        { error: "Could not send your message. Please try again or email us directly." },
+        { status: 502 }
+      );
+    }
     return NextResponse.json({ ok: true });
-  } catch (err: unknown) {
-    const sgErr = err as { response?: { body?: unknown } };
-    console.error("SendGrid send failed:", sgErr?.response?.body ?? err);
+  } catch (err) {
+    console.error("Slack webhook error:", err);
     return NextResponse.json(
       { error: "Could not send your message. Please try again or email us directly." },
       { status: 502 }
