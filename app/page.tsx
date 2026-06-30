@@ -37,10 +37,12 @@ export default function WelcomePage() {
             <span className="dot7" />
             <span>MiCA-compliant · EU-regulated processor · done for you</span>
           </div>
-          <h1>Accept crypto + fiat, the compliant way.</h1>
+          <h1>Global Merchant Account Solutions</h1>
           <p>
-            We integrate a regulated crypto + fiat payment stack into your product — so you go
-            live in days, not months. Choose the path that fits your business.
+            From startups to enterprise merchants, we help businesses secure the right acquiring
+            partner for their industry, risk profile, and growth ambitions. Card payments,
+            digital wallets, subscriptions, marketplaces, and alternative payment methods—all
+            through a single trusted partner.
           </p>
         </div>
 
